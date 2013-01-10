@@ -5,6 +5,7 @@ process.title = 'tty.js';
 var tty = require('../');
 
 var conf = tty.config.readConfig()
-  , app = tty.createServer(conf);
+  , app = tty.createServer(conf),
+  , path = process.env.HOME + "/.tty.js/sock";
 
-app.listen();
+app.listen(path);
